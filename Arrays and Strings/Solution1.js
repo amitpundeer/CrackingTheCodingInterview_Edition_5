@@ -2,8 +2,7 @@
     Implement an algorithm to determine if a string has all unique characters.
     What if you cannot use additional data structures.
 */
- console.log('start')
- console.log('begin')
+
 // O(N^2)
 function containUniqueChar(input) {
     
@@ -53,7 +52,7 @@ function containUniqueChar2(input) {
     for(let i = 0; i < input.length; i++)
     {
         let val = input.charCodeAt(i) - 'a'.charCodeAt(0);
-        console.log(val);
+        
         if( (set & (1<<val)) > 0) return false
         
         set |= (1<<val)
@@ -66,7 +65,7 @@ var stdin = process.openStdin();
  
 stdin.addListener("data", function(d) {
  
-    const input = d.toString()    
+    const input = d.toString().trim() 
     
     let isUnique = containUniqueChar2(input.toLowerCase())
     
